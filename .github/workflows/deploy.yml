@@ -35,6 +35,9 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           port: 21
-          local-dir: ./dist
-          server-dir: /public_html
+          # ÖNEMLİ: klasör olduğu belli olsun diye sonunda / var
+          local-dir: ./dist/
+          # Aynı mantıkla burada da / eklemek iyi olur
+          server-dir: /public_html/
           dangerous-clean-slate: false
+
