@@ -1,0 +1,14 @@
+## Pages
+- [- Tıraş Randevum](/barberpublicprofile): No description available
+- [- Tıraş Randevum](/shoppublic): No description available
+- [Berber Bul - Tıraş Randevum](/findbarberbycode): Berberinizi koduyla bulun ve randevu alın.
+- [Berber Paneli - Tıraş Randevum](/barberdashboard): Berber paneli - Randevularınızı, portföyünüzü ve profilinizi yönetin.
+- [Giriş Yap - Tıraş Randevum](/login): Tıraş Randevum hesabınıza giriş yapın ve randevularınızı yönetmeye başlayın.
+- [Kayıt Ol - Tıraş Randevum](/register): Tıraş Randevum
+- [Müşteri Paneli - Tıraş Randevum](/customerdashboard): Müşteri paneli - Yaklaşan randevularınızı görüntüleyin ve yönetin.
+- [Portföyüm - Tıraş Randevum](/barberinstagramprofile): Çalışmalarınızı sergileyin, yeni postlar ekleyin ve takipçilerinizle etkileşimde bulunun.
+- [Randevu Al -](/bookappointmentwizard): No description available
+- [Randevu Sistemi - Tıraş Randevum](/barberappointmentsystem): Randevularınızı yönetin, yeni randevular oluşturun.
+- [Salon Bul - Tıraş Randevum](/findshopbycode): Salonu koduyla bulun ve randevu alın.
+- [Tıraş Randevum - Berberler için Akıllı Randevu Yönetimi](/home): Tıraş Randevum ile berber randevularınızı kolayca yönetin. Akıllı randevu sistemi ile müşterilerinize daha iyi hizmet verin.
+- [Yönetici Paneli - Tıraş Randevum](/admindashboard): Yönetici paneli - İstatistikleri ve genel durumu görüntüleyin.

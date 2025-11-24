@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root, .theme-grey {
+    /* Main Theme Colors (Fixed Dark Grey) */
+    --tr-bg: #151820;           /* Darkest background */
+    --tr-bg-soft: #191d26;     /* Slightly lighter bg for cards, inputs */
+    --tr-bg-elevated: #1f2430; /* Lighter bg for popovers, dropdowns */
+
+    --tr-border-subtle: #ffffff14; /* Faint borders */
+    --tr-border-strong: #ffffff29; /* Stronger borders */
+    
+    --tr-text: #e1e7f2;         /* Primary text */
+    --tr-text-muted: #848d9a;  /* Muted/secondary text */
+
+    --tr-accent: #6d52ec;       /* Main accent color (e.g., buttons) */
+    --tr-accent-soft: #6d52ec24; /* Soft accent for highlights */
+    --tr-danger: #e5484d;       /* Danger/error color */
+
+    /* Shadcn/ui variables mapping */
+    --background: 220 13% 11%; /* maps to --tr-bg */
+    --foreground: 215 15% 91%; /* maps to --tr-text */
+    
+    --card: 220 14% 12%; /* maps to --tr-bg-soft */
+    --card-foreground: 215 15% 91%;
+
+    --popover: 220 15% 15%; /* maps to --tr-bg-elevated */
+    --popover-foreground: 215 15% 91%;
+
+    --primary: 215 15% 91%;
+    --primary-foreground: 247 69% 62%;
+    
+    --secondary: 220 14% 12%;
+    --secondary-foreground: 215 15% 91%;
+    
+    --muted: 220 14% 12%;
+    --muted-foreground: 220 9% 56%; /* maps to --tr-text-muted */
+    
+    --accent: 247 69% 62%; /* maps to --tr-accent */
+    --accent-foreground: 215 15% 91%;
+
+    --destructive: 358 81% 60%; /* maps to --tr-danger */
+    --destructive-foreground: 215 15% 91%;
+
+    --border: 255 100% 100% / 0.15; /* maps to --tr-border-strong-ish */
+    --input: 255 100% 100% / 0.15;
+    --ring: 247 69% 62%;
+    
+    --radius: 0.5rem;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    background-color: var(--tr-bg);
+    color: var(--tr-text);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .panel-surface {
+    @apply bg-[--tr-bg-soft] border border-[--tr-border-subtle];
+  }
+  .text-muted {
+    @apply text-[--tr-text-muted];
+  }
+}

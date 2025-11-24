@@ -1,0 +1,22 @@
+{
+  "name": "Tıraş Randevum",
+  "short_name": "Tıraş Randevum",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#111827",
+  "theme_color": "#111827",
+  "description": "Berberler için modern randevu ve sıra yönetim sistemi.",
+  "icons": [
+    {
+      "src": "/icons/tiras-randevum-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/tiras-randevum-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
