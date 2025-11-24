@@ -3,41 +3,43 @@ name: Build and Deploy via FTP
 on:
   push:
     branches:
-      - main   # veya prod branch'in hangisiyse
+      - main
+  # GitHub arayüzünden manuel tetikleme yapabilmek için:
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
+    name: Build & Deploy
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: 🛎️ Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
+          cache: 'npm' # Bağımlılıkları önbelleğe alarak hızı artırır
 
-      - name: Install dependencies
+      - name: 📦 Install Dependencies
         run: npm ci
 
-      - name: Build project
+      - name: 🏗️ Build Project
         run: npm run build
         env:
+          # Build sırasında env değişkenlerini içeri alır
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
-      - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: 🚀 Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           port: 21
-          # ÖNEMLİ: klasör olduğu belli olsun diye sonunda / var
           local-dir: ./dist/
-          # Aynı mantıkla burada da / eklemek iyi olur
-          server-dir: /public_html/
-          dangerous-clean-slate: false
-
+          server-dir: /public_html/ # Sunucudaki hedef klasör (Hostinger için genelde budur)
+          dangerous-clean-slate: false # true yapılırsa hedef klasördeki eski dosyaları siler (dikkatli kullanın)
