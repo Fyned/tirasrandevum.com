@@ -1,13 +1,11 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Supabase URL ve Anon Key doğrudan burada tanımlanmıştır.
-const supabaseUrl = 'https://qtdieesowkpiioiflajf.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF0ZGllZXNvd2twaWlvaWZsYWpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMyNTU5MDMsImV4cCI6MjA3ODgzMTkwM30.Z2kReBCySltreAZYLYRZh-ZU8X-uvnPKNpfZz6BzEsg';
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  console.error(
-    'Supabase URL veya Anon Key eksik. Lütfen .env dosyanızı veya supabaseClient.js dosyasını kontrol edin.'
-  );
+  // Build veya runtime’da env unutulursa daha erken patlasın
+  console.error('Supabase env değişkenleri eksik. Lütfen VITE_SUPABASE_URL ve VITE_SUPABASE_ANON_KEY ayarlarını kontrol edin.');
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
